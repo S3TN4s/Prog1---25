@@ -1,8 +1,8 @@
 using System.Diagnostics;
+using Aula01.Models;
 using Microsoft.AspNetCore.Mvc;
-using Projeto_1.Models;
 
-namespace Projeto_1.Controllers
+namespace Aula01.Controllers
 {
     public class HomeController : Controller
     {
@@ -15,8 +15,7 @@ namespace Projeto_1.Controllers
 
         public IActionResult Index()
         {
-            Variaveis minhaVariavel = new Variaveis();
-            return View(minhaVariavel);
+            return View();
         }
 
         public IActionResult Privacy()
