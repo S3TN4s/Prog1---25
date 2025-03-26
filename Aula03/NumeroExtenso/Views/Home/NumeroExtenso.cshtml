@@ -1,0 +1,18 @@
+﻿@model NumeroExtenso.Controllers.HomeController;
+
+@{
+    ViewData["Title"] = "NumeroExtenso";
+}
+
+<h1 class="numberConversionTitle">Página da Conversão</h1>
+
+<form asp-action="NumeroExtenso" class="numberForm" method="post">
+    <div class="main-part-form">
+        <h2 class="titleConversion">Converter Número para Extenso</h2>
+        <input type="number" name="number" placeholder="Digite Número para converter" />
+        <button class="conversionButton" type="submit">Converter</button>
+    </div>
+    <h3 class="conversion">
+        Conversão: @ViewData["Extenso"]
+    </h3>
+</form>
