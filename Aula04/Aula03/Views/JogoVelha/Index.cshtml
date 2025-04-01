@@ -1,0 +1,39 @@
+﻿@model String
+
+@{
+}
+
+<form id="JogoVelhaForm" method="post">
+    <div>
+        <table>
+            <tr>
+                <td>
+                    <input type="text" name="A00" maxlength="1" pattern="[XO]"/>
+                </td>
+                <td>
+                    <input type="text" name="A01" maxlength="1" pattern="[XO]" />
+                </td>
+                <td>
+                    <input type="text" name="A02" maxlength="1" pattern="[XO]" />
+                </td>
+            </tr>
+            <tr>
+                <td><input type="text" name="A10" maxlength="1" pattern="[XO]" /> </td>
+                <td><input type="text" name="A11" maxlength="1" pattern="[XO]" /> </td>
+                <td><input type="text" name="A12" maxlength="1" pattern="[XO]" /> </td>
+            </tr>
+            <tr>
+                <td><input type="text" name="A20" maxlength="1" pattern="[XO]" /> </td>
+                <td><input type="text" name="A21" maxlength="1" pattern="[XO]" /> </td>
+                <td><input type="text" name="A22" maxlength="1" pattern="[XO]" /> </td>
+            </tr>
+        </table>
+    </div>
+    <input type="submit" value="Validar"/>
+</form>
+
+@if (!string.IsNullOrEmpty(Model))
+{ 
+    <h1>@Model</h1>
+}
+
