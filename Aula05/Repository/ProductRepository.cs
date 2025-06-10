@@ -20,7 +20,7 @@ namespace Repository
 
             foreach (Product c in ProductData.Products)
             {
-                if (c.ProductName!.ToLower().Contains(ProductName.ToLower()))
+                if (c.Name!.ToLower().Contains(ProductName.ToLower()))
                     ret.Add(c);
             }
 
@@ -55,7 +55,7 @@ namespace Repository
         public void Update(Product newProducts)
         {
             Product oldProduct = Retrieve(newProducts.Id);
-            oldProduct.ProductName = newProducts.ProductName;
+            oldProduct.Name = newProducts.Name;
             oldProduct.Description = newProducts.Description;
             oldProduct.CurrentPrice = newProducts.CurrentPrice;
         }

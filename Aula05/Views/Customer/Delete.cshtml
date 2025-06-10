@@ -1,0 +1,40 @@
+﻿@model Modelo.Customer
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-6">
+            Id:
+        </div>
+        <div class="col-6">
+            @Model.Id
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-6">
+            Nome:
+        </div>
+        <div class="col-6">
+            @Model.Name
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <form method="post" asp-action="ConfirmDelete"
+                  asp-controller="Customer">
+                <input type="hidden" name="id"
+                       value="@Model.Id" />
+                <button class="btn btn-primary">
+                    Excluir
+                </button>
+                <a asp-action="Index" class="btn btn-danger"
+                   asp-controller="Customer">
+                    Voltar
+                </a>
+            </form>
+        </div>
+    </div>
+
+</div>

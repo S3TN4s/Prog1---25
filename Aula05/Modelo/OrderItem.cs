@@ -1,4 +1,5 @@
-﻿namespace Modelo
+﻿
+namespace Modelo
 {
     public class OrderItem
     {
@@ -6,17 +7,28 @@
         public Product? Product { get; set; }
         public double Quantity { get; set; }
         public double PurchasePrice { get; set; }
-        public bool Validate()
+
+        public bool Validade()
         {
             bool isValid = true;
 
-            isValid = 
-                this.Id > 0 && 
-                Product != null && 
-                Quantity > 0 && 
-                PurchasePrice > 0;
+            double quantityItems = 10;
+
+            isValid = (Id > 0) && 
+                      (Quantity > 0) && 
+                      (PurchasePrice > 0) &&
+                      Product != null;
 
             return isValid;
+        }
+
+        public OrderItem Retrieve()
+        {
+            return new OrderItem();
+        }
+
+        public void Save(OrderItem orderItem)
+        {
         }
     }
 }

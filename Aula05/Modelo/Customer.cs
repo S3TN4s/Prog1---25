@@ -4,22 +4,15 @@
     {
         public int Id { get; set; }
         public string? Name { get; set; }
-        public Address? Address { get; set; }
+        public Address? HomeAddress { get; set; }
+        public Address? WorkAddress { get; set; }
 
-        public static int InstanceCount;
+        public static int InstanceCount = 0;
         public int ObjectCount = 0;
 
-        public bool Validate()
+        public bool Validade()
         {
-            bool isValid = true;
-
-            isValid = 
-                this.Id > 0 &&
-                !string.IsNullOrEmpty(Name) &&
-                Address != null;
-
-            return isValid;
+            return true;
         }
-
     }
 }

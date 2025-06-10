@@ -1,44 +1,33 @@
 using System.Diagnostics;
-using Aula05.Models;
 using Microsoft.AspNetCore.Mvc;
+using Aula05.Models;
 using Modelo;
 
-namespace Aula05.Controllers
+namespace Aula05.Controllers;
+
+public class HomeController : Controller
 {
-    public class HomeController : Controller
+    private readonly ILogger<HomeController> _logger;
+    private Order _order;
+
+    public HomeController(ILogger<HomeController> logger)
     {
-        private readonly ILogger<HomeController> _logger;
+        _logger = logger;
+    }
 
-        public HomeController(ILogger<HomeController> logger)
-        {
-            _logger = logger;
-        }
+    public IActionResult Index()
+    {
+        return View();
+    }
 
-        public IActionResult Index()
-        {
+    public IActionResult Privacy()
+    {
+        return View();
+    }
 
-            Customer c1 = new Customer();
-            c1.Name = "Frodo";
-            c1.ObjectCount++;
-            //c1.InstanceCount Não funciona pq InstanceCount não é do objeto e sim da classe
-            Customer.InstanceCount ++;
-            var c2 = new Customer();
-            c2.Name = "Galadriel";
-            c2.ObjectCount ++ ;
-            Customer.InstanceCount ++;
-
-            return View();
-        }
-
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
+    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+    public IActionResult Error()
+    {
+        return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
 }

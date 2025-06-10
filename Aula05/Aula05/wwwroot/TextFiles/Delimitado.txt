@@ -1,91 +1,10 @@
-1;Customer 1;
-                                  1;
-                                  Videira;
-                                  Santa Catarina;
-                                  Brasil;
-                                  Rua;
-                                  89560-000;
-                                  Casa
-                                  \n
-                                  2;Customer 2;
-                                  2;
-                                  Videira;
-                                  Santa Catarina;
-                                  Brasil;
-                                  Rua;
-                                  89560-000;
-                                  Casa
-                                  \n
-                                  3;Customer 3;
-                                  3;
-                                  Videira;
-                                  Santa Catarina;
-                                  Brasil;
-                                  Rua;
-                                  89560-000;
-                                  Casa
-                                  \n
-                                  4;Customer 4;
-                                  4;
-                                  Videira;
-                                  Santa Catarina;
-                                  Brasil;
-                                  Rua;
-                                  89560-000;
-                                  Casa
-                                  \n
-                                  5;Customer 5;
-                                  5;
-                                  Videira;
-                                  Santa Catarina;
-                                  Brasil;
-                                  Rua;
-                                  89560-000;
-                                  Casa
-                                  \n
-                                  6;Customer 6;
-                                  6;
-                                  Videira;
-                                  Santa Catarina;
-                                  Brasil;
-                                  Rua;
-                                  89560-000;
-                                  Casa
-                                  \n
-                                  7;Customer 7;
-                                  7;
-                                  Videira;
-                                  Santa Catarina;
-                                  Brasil;
-                                  Rua;
-                                  89560-000;
-                                  Casa
-                                  \n
-                                  8;Customer 8;
-                                  8;
-                                  Videira;
-                                  Santa Catarina;
-                                  Brasil;
-                                  Rua;
-                                  89560-000;
-                                  Casa
-                                  \n
-                                  9;Customer 9;
-                                  9;
-                                  Videira;
-                                  Santa Catarina;
-                                  Brasil;
-                                  Rua;
-                                  89560-000;
-                                  Casa
-                                  \n
-                                  10;Customer 10;
-                                  10;
-                                  Videira;
-                                  Santa Catarina;
-                                  Brasil;
-                                  Rua;
-                                  89560-000;
-                                  Casa
-                                  \n
-                                  
+1;Customer 1;1;Videira;SC;HU3HU3BR;Rua da minha casa;Sua casa;89560-000;Casa
+2;Customer 2;2;Videira;SC;HU3HU3BR;Rua da minha casa;Sua casa;89560-000;Casa
+3;Customer 3;3;Videira;SC;HU3HU3BR;Rua da minha casa;Sua casa;89560-000;Casa
+4;Customer 4;4;Videira;SC;HU3HU3BR;Rua da minha casa;Sua casa;89560-000;Casa
+5;Customer 5;5;Videira;SC;HU3HU3BR;Rua da minha casa;Sua casa;89560-000;Casa
+6;Customer 6;6;Videira;SC;HU3HU3BR;Rua da minha casa;Sua casa;89560-000;Casa
+7;Customer 7;7;Videira;SC;HU3HU3BR;Rua da minha casa;Sua casa;89560-000;Casa
+8;Customer 8;8;Videira;SC;HU3HU3BR;Rua da minha casa;Sua casa;89560-000;Casa
+9;Customer 9;9;Videira;SC;HU3HU3BR;Rua da minha casa;Sua casa;89560-000;Casa
+10;Customer 10;10;Videira;SC;HU3HU3BR;Rua da minha casa;Sua casa;89560-000;Casa

@@ -4,26 +4,23 @@ namespace Repository
 {
     public class CustomerRepository
     {
-        public Customer Retrieve(int Id)
+        public Customer Retrieve(int id)
         {
-            foreach (Customer c in CustomerData.Customers) 
-            { 
-                if (c.Id == Id) 
-                    return c;
-            }
-            return null;
+            foreach ( Customer c in CustomerData.Customers )            
+                if (c.Id == id)                
+                    return c;                           
+
+            return null!;
         }
 
-        public List<Customer> RetieveByName(string Name)
+        public List<Customer> RetrieveByName(string name)
         {
             List<Customer> ret = new List<Customer>();
-            
-            foreach (Customer c in CustomerData.Customers) 
-            {
-                if (c.Name!.ToLower().Contains(Name.ToLower()))
-                    ret.Add(c);
-            }
-            
+
+            foreach (Customer c in CustomerData.Customers)            
+                if (c.Name!.ToLower().Contains(name.ToLower()))                
+                    ret.Add(c);                            
+
             return ret;
         }
 
@@ -47,8 +44,9 @@ namespace Repository
         {
             Customer customer = Retrieve(id);
 
-            if (customer != null)
+            if(customer != null)
                 return Delete(customer);
+
             return false;
         }
 
@@ -56,7 +54,8 @@ namespace Repository
         {
             Customer oldCustomer = Retrieve(newCustomer.Id);
             oldCustomer.Name = newCustomer.Name;
-            oldCustomer.Address = newCustomer.Address;
+            oldCustomer.WorkAddress = newCustomer.WorkAddress;
+            oldCustomer.HomeAddress = newCustomer.HomeAddress;
         }
 
         public int GetCount()
