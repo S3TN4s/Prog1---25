@@ -4,65 +4,61 @@ namespace Repository
 {
     public class ProductRepository
     {
-        public Product Retrieve(int Id)
+        public Product Retrieve(int id)
         {
-            foreach (Product p in ProductData.Products)
-            {
-                if (p.Id == Id)
+            foreach (Product p in CustomerData.Products)
+                if (p.Id == id)
                     return p;
-            }
-            return null;
+            return null!;
         }
-
-        public List<Product> RetieveByName(string ProductName)
+        public List<Product> RetrieveByName(string name)
         {
             List<Product> ret = new List<Product>();
 
-            foreach (Product c in ProductData.Products)
-            {
-                if (c.Name!.ToLower().Contains(ProductName.ToLower()))
-                    ret.Add(c);
-            }
+            foreach (Product p in CustomerData.Products)
+                if (p.Name!.ToLower().Contains(name.ToLower()))
+                    ret.Add(p);
 
             return ret;
         }
 
         public List<Product> RetrieveAll()
         {
-            return ProductData.Products;
+            return CustomerData.Products;
         }
 
-        public void Save(Product products)
+        public void Update(Product newProduct)
         {
-            products.Id = GetCount() + 1;
-            ProductData.Products.Add(products);
+            Product oldProduct = Retrieve(newProduct.Id);
+            oldProduct.Name = newProduct.Name;
+            oldProduct.Description = newProduct.Description;
+            oldProduct.CurrentPrice = newProduct.CurrentPrice;
         }
 
-        public bool Delete(Product products)
+        public void Save(Product product)
         {
-            return ProductData.Products.Remove(products);
+            product.Id = GetCount() + 1;
+            CustomerData.Products.Add(product);
+        }
+
+        public bool Delete(Product product)
+        {
+            return CustomerData.Products.Remove(product);
         }
 
         public bool DeleteById(int id)
         {
-            Product products = Retrieve(id);
+            Product product = Retrieve(id);
 
-            if (products != null)
-                return Delete(products);
+            if (product != null)
+                return Delete(product);
+
             return false;
-        }
-
-        public void Update(Product newProducts)
-        {
-            Product oldProduct = Retrieve(newProducts.Id);
-            oldProduct.Name = newProducts.Name;
-            oldProduct.Description = newProducts.Description;
-            oldProduct.CurrentPrice = newProducts.CurrentPrice;
         }
 
         public int GetCount()
         {
-            return ProductData.Products.Count;
+            return CustomerData.Products.Count;
         }
     }
 }

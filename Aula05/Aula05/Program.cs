@@ -29,6 +29,7 @@ app.MapControllerRoute(
     .WithStaticAssets();
 
 FillCustomerData();
+FillProductData();
 
 app.Run();
 
@@ -55,5 +56,19 @@ static void FillCustomerData()
         };
 
         CustomerData.Customers.Add(customer);
+    }
+}
+
+static void FillProductData()
+{
+    for (int i = 1; i <= 10; i++)
+    {
+        Product product = new()
+        {
+            Id = i,
+            Name = $"Product {i}"
+        };
+
+        CustomerData.Products.Add(product);
     }
 }

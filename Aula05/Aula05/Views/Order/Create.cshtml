@@ -1,0 +1,85 @@
+﻿@model Aula05.ViewModels.OrderViewModel
+
+@{
+    ViewData["Title"] = "Criar Pedido";
+}
+
+<div class="text-center">
+    <h1>Cadastro de Pedido</h1>
+
+    <div class="container">
+
+        <form id="formOrder" method="post"
+              asp-action="Create"
+              asp-controller="Order">
+
+            <div class="row">
+                <div class="form-group">
+                    <label asp-for="@Model.CustomerId">
+                        Cliente:
+                    </label>
+                    <select asp-for="@Model.CustomerId" class="form-select">
+                        @foreach (var c in Model.Customers)
+                        {
+                            <option value="@c.Id">@c.Name</option>
+                        }
+                    </select>
+                </div>
+            </div>
+
+            <div class="row">
+                <table class="table table-striped table-bordered table-hover table-responsive">
+                    <thead>
+                        <tr>
+                            <th>Sel.</th>
+                            <th>Produto</th>
+                            <th>Val. Unit.</th>
+                            <th>Quant.</th>
+                            <th>Val.</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for (int i = 0; i < Model.SelectedItems!.Count; i++)
+                        {
+                            var item = Model.SelectedItems[i];
+                            <tr>
+                                <td>
+                                    <input type="checkbox" class="form-check-input"
+                                           asp-for="@Model.SelectedItems[i].IsSelected" />
+                                    <input type="hidden"
+                                           asp-for="@Model.SelectedItems[i].OrderItem" />
+
+                                </td>
+                                <td>
+                                    <input type="hidden"
+                                           asp-for="@Model.SelectedItems[i].OrderItem.Product!.Id" />
+                                    <span>@Model.SelectedItems[i].OrderItem.Product!.Name</span>
+                                </td>
+                                <td>
+                                    <span>
+                                        @string.Format("{0:C}", Model.SelectedItems[i]!.OrderItem!.Product!.CurrentPrice)
+                                    </span>
+                                </td>
+                                <td>
+                                    <input type="number" asp-for="@Model.SelectedItems[i].OrderItem.Quantity" />
+                                </td>
+                                <td>
+                                    <input type="number" asp-for="@Model.SelectedItems[i].OrderItem.PurchasePrice" />
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+
+            <button id="btnCustomer"
+                    type="submit"
+                    class="btn btn-primary"
+                    value="Cadastrar">
+                Cadastrar
+            </button>
+
+        </form>
+
+    </div>
+</div>
